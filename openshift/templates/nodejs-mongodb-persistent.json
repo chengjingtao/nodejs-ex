@@ -102,12 +102,8 @@
         },
         "strategy": {
           "type": "Source",
-          "sourceStrategy": {
-            "from": {
-              "kind": "ImageStreamTag",
-              "namespace": "${NAMESPACE}",
-              "name": "nodejs:6"
-            },
+          "jenkinsPipelineStrategy": {
+            "jenkinsfile": "node('agent') {\nstage 'build'\nopenshiftBuild(buildConfig: 'ruby-sample-build', showBuildLogs: 'true')\nstage 'deploy'\nopenshiftDeploy(deploymentConfig: 'frontend')\n}",
             "env":  [
               {
                 "name": "NPM_MIRROR",
@@ -476,7 +472,7 @@
       "displayName": "Git Repository URL",
       "description": "The URL of the repository with your application source code.",
       "required": true,
-      "value": "https://github.com/openshift/nodejs-ex.git"
+      "value": "https://github.com/chengjingtao/nodejs-ex.git"
     },
     {
       "name": "SOURCE_REPOSITORY_REF",
