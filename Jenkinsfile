@@ -3,7 +3,11 @@ pipeline {
   stages {
     stage('Clone') {
       steps {
-        git(url: 'https://github.com/chengjingtao/nodejs-ex', branch: 'master', changelog: true, poll: true)
+        sh "pwd"
+        sh "ls -l"
+        git(url: 'https://github.com/chengjingtao/nodejs-ex2', branch: 'master', changelog: true, poll: true)
+        sh "pwd"
+        sh "ls -l"
       }
     }
     stage('Build') {
