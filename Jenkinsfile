@@ -1,6 +1,9 @@
 pipeline {
   agent any
   stages {
+    stage('Prepare'){
+      sh "echo this is prepare"
+    }
     stage('Clone') {
       steps {
         sh 'pwd'
