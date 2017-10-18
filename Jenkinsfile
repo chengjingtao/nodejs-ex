@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Prepare'){
       sh "echo this is prepare"
+      sh "exit 1"
     }
     stage('Clone') {
       steps {
