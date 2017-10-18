@@ -1,5 +1,7 @@
 node('nodejs') {
   stage 'build'
+  sh "pwd"
+  sh "ls -l"
   input "begin to build??"
   openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
   stage 'deploy'
