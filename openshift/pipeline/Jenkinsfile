@@ -1,5 +1,6 @@
 node('nodejs') {
   stage 'build'
+  input "begin to build??"
   openshiftBuild(buildConfig: 'nodejs-ex', showBuildLogs: 'true')
   stage 'deploy'
   openshiftDeploy(deploymentConfig: 'nodejs-ex')
