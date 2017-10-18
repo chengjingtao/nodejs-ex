@@ -2,8 +2,11 @@ pipeline {
   agent any
   stages {
     stage('Prepare'){
-      sh "echo this is prepare"
-      sh "exit 1"
+      steps{
+        sh "echo this is prepare"
+        sh "exit 1"
+      }
+
     }
     stage('Clone') {
       steps {
